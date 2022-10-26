@@ -149,6 +149,6 @@ async def moron(inter):
 async def bentley(inter):
     await inter.send(file=disnake.File("assets/Bentley.png"))
 
-#bot.run("NzE0NTY3ODUxNzA4NjQ1NDMx.XswjKw.IBsIJelcVPzHRuEcfzjpYcPsbE4")
-bot.run("NzI3ODM5MTE5ODI4MzIwMjU3.GJahqb.moj6BNiqJ9g1bUcbdRbiYFCjpbY3ElGkoUvnwg")
+
+bot.run("TOKEN")
 
