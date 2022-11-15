@@ -149,6 +149,38 @@ async def moron(inter):
 async def bentley(inter):
     await inter.send(file=disnake.File("assets/Bentley.png"))
 
+@bot.slash_command(description="Shows you the Help Menu")
+async def help(inter):
+    embed = disnake.Embed(
+        title="Wheatley Help Menu",
+        description="A quick overview of all commands in Wheatley",
+        color=disnake.Colour.blue(),
+    )
 
-bot.run("TOKEN")
+    embed.set_author(
+        name="Wheatley",
+        url="https://ohas.website",
+        icon_url="https://cdn.discordapp.com/avatars/714567851708645431/b609799d6fb8210f7e283adcb8b4c9d7.png",
+    )
+    embed.set_footer(
+        text="WheatleyBot 1.2 - Developed By Oha Der Erste",
+        icon_url="https://cdn.discordapp.com/avatars/714567851708645431/b609799d6fb8210f7e283adcb8b4c9d7.png",
+    )
 
+
+
+    embed.add_field(name="/wetter", value="Shows you the weather!", inline=False)
+    embed.add_field(name="/sagmir {your yes-no-question}", value="Helps you make important decisions", inline=False)
+    embed.add_field(name="/table", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
+    embed.add_field(name="/herewegoagain", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
+    embed.add_field(name="/boom", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
+    embed.add_field(name="/kopf {mc-name}", value="Shows you the head of a Minecraft Player", inline=False)
+    embed.add_field(name="/skin {mc-name", value="Shows you the skin of a Minecraft Player", inline=False)
+    embed.add_field(name="/mock", value="MoCkS yOuR mEsSaGe", inline=False)
+    embed.add_field(name="/guess {number}", value="Im thinking about a number and you have to guess it", inline=False)
+    embed.add_field(name="/glados", value="Try it out LMAO", inline=False)
+    embed.add_field(name="/moron", value="I AM NOT A MORON", inline=False)
+    embed.add_field(name="/bentley", value="gives you a pick of the cutest cat ever!", inline=False)
+    await inter.send(embed=embed)
+
+bot.run("Token")
