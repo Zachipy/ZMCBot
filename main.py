@@ -13,6 +13,9 @@ insultsfile = open("assets/insults.txt")
 insults = insultsfile.read()
 oneinsult = insults.split("\n\n")
 insultsfile.close()
+tokenfile = open(".token")
+bottoken = tokenfile.read()
+print(f"Token:{bottoken}")
 
 bot = commands.Bot(command_prefix='!')
 
@@ -193,4 +196,4 @@ async def help(inter):
     embed.add_field(name="/bentley", value="gives you a pick of the cutest cat ever!", inline=False)
     await inter.send(embed=embed)
 
-bot.run("Token")
+bot.run(bottoken)
