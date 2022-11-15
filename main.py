@@ -9,6 +9,11 @@ answers = ['Ja', 'Nein', 'Möglich', 'Defenetiv ja', 'Eventuell', 'Auf jeden Fal
 buchstabe = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
              'v', 'w', 'x', 'y', 'z']
 
+insultsfile = open("assets/insults.txt")
+insults = insultsfile.read()
+oneinsult = insults.split("\n\n")
+insultsfile.close()
+
 bot = commands.Bot(command_prefix='!')
 
 
@@ -149,6 +154,10 @@ async def moron(inter):
 async def bentley(inter):
     await inter.send(file=disnake.File("assets/Bentley.png"))
 
+@bot.slash_command(description="Insult someone")
+async def insult(inter):
+    await inter.send(random.choice(oneinsult))
+
 @bot.slash_command(description="Shows you the Help Menu")
 async def help(inter):
     embed = disnake.Embed(
@@ -170,6 +179,7 @@ async def help(inter):
 
 
     embed.add_field(name="/wetter", value="Shows you the weather!", inline=False)
+    embed.add_field(name="/insult", value="Spits out a random insult!", inline=False)
     embed.add_field(name="/sagmir {your yes-no-question}", value="Helps you make important decisions", inline=False)
     embed.add_field(name="/table", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
     embed.add_field(name="/herewegoagain", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
@@ -183,4 +193,4 @@ async def help(inter):
     embed.add_field(name="/bentley", value="gives you a pick of the cutest cat ever!", inline=False)
     await inter.send(embed=embed)
 
-bot.run("Token")
+bot.run("NzE0NTY3ODUxNzA4NjQ1NDMx.G8LUgJ.ibwc9zlbaHaYSQxMMD2D_P-AuB2oYCBX_OvRjM")
