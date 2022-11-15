@@ -193,4 +193,4 @@ async def help(inter):
     embed.add_field(name="/bentley", value="gives you a pick of the cutest cat ever!", inline=False)
     await inter.send(embed=embed)
 
-bot.run("NzE0NTY3ODUxNzA4NjQ1NDMx.G8LUgJ.ibwc9zlbaHaYSQxMMD2D_P-AuB2oYCBX_OvRjM")
+bot.run("Token")
