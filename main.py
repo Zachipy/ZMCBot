@@ -16,6 +16,7 @@ insultsfile.close()
 tokenfile = open(".token")
 bottoken = tokenfile.read()
 print(f"Token:{bottoken}")
+tokenfile.close()
 
 bot = commands.Bot(command_prefix='!')
 
