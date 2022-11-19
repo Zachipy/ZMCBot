@@ -23,6 +23,7 @@ tokenfile = open(".token")
 bottoken = tokenfile.read()
 tokenfile.close()
 print(f"Token:{bottoken}")
+tokenfile.close()
 
 bot = commands.Bot(command_prefix='!')
 
