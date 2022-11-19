@@ -61,7 +61,7 @@ async def soundboard(inter):
 async def table(inter):
     channel = inter.author.voice.channel
     vc = await channel.connect()
-    await inter.send("Sound wird abgespielt", ephemeral=True)
+    await inter.send("Playing sound...", ephemeral=True)
     source = disnake.FFmpegPCMAudio("sounds/table.mp3")
     vc.play(source)
     await  asyncio.sleep(10)
@@ -74,7 +74,7 @@ async def table(inter):
 async def herewegoagain(inter):
     channel = inter.author.voice.channel
     vc = await channel.connect()
-    await inter.send("Sound wird abgespielt", ephemeral=True)
+    await inter.send("Playing sound...", ephemeral=True)
     source = disnake.FFmpegPCMAudio("sounds/again.mp3")
     vc.play(source)
     await asyncio.sleep(3)
@@ -86,7 +86,7 @@ async def herewegoagain(inter):
 async def boom(inter):
     channel = inter.author.voice.channel
     vc = await channel.connect()
-    await inter.send("Sound wird abgespielt", ephemeral=True)
+    await inter.send("Playing sound...", ephemeral=True)
     source = disnake.FFmpegPCMAudio("sounds/vineboom.mp3")
     vc.play(source)
     await asyncio.sleep(3)
