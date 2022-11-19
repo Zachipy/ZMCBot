@@ -13,8 +13,15 @@ insultsfile = open("assets/insults.txt")
 insults = insultsfile.read()
 oneinsult = insults.split("\n\n")
 insultsfile.close()
+
+trashfile = open("assets/trash.txt")
+trash = trashfile.read()
+onetrash = trash.split("\n\n")
+trashfile.close()
+
 tokenfile = open(".token")
 bottoken = tokenfile.read()
+tokenfile.close()
 print(f"Token:{bottoken}")
 
 bot = commands.Bot(command_prefix='!')
@@ -43,17 +50,13 @@ async def sagmir(inter, *, question: str):
                           description=f" {inter.author.mention} hat mir folgende Frage gestellt:\r\n\r\n**{question}** \r\n\r\n Meine Antwort lautet:\r\n\r\n **{random.choice(answers)}**")
     await inter.send(embed=embed)
 
-
-# Delete command
-# @bot.slash_command(description="Löscht Nachrichten in einem Channel")
-# async def delete(inter, amount):
-#    if amount.isdigit():
-#        count = int(amount) + 1
-#        deleted = await inter.channel.purge(limit=count)
-#        await inter.response.send_message(f"Ich habe {len(deleted)} Nachrichten gelöscht", ephemeral=True)
+#Dummy
+@bot.slash_command()
+async def soundboard(inter):
+    pass
 
 # Table
-@bot.slash_command(description="Soundboard: oh noo, out table is broken")
+@soundboard.sub_command(name="table", description="Soundboard: oh noo, out table! its broken!")
 async def table(inter):
     channel = inter.author.voice.channel
     vc = await channel.connect()
@@ -66,7 +69,7 @@ async def table(inter):
 
 
 # here we go again
-@bot.slash_command(description="Soundboard: Ah shit, here wo go again!")
+@soundboard.sub_command(name="herewegoagain", description="Soundboard: Ah shit, here wo go again!")
 async def herewegoagain(inter):
     channel = inter.author.voice.channel
     vc = await channel.connect()
@@ -78,7 +81,7 @@ async def herewegoagain(inter):
     await guild.disconnect()
 
 
-@bot.slash_command(description="Soundboard: boom")
+@soundboard.sub_command(name="boom", description="Soundboard: boom")
 async def boom(inter):
     channel = inter.author.voice.channel
     vc = await channel.connect()
@@ -161,6 +164,10 @@ async def bentley(inter):
 async def insult(inter):
     await inter.send(random.choice(oneinsult))
 
+@bot.slash_command(description="Sends literal trash")
+async def trash(inter):
+    await inter.send(random.choice(onetrash))
+
 @bot.slash_command(description="Shows you the Help Menu")
 async def help(inter):
     embed = disnake.Embed(
@@ -175,7 +182,7 @@ async def help(inter):
         icon_url="https://cdn.discordapp.com/avatars/714567851708645431/b609799d6fb8210f7e283adcb8b4c9d7.png",
     )
     embed.set_footer(
-        text="WheatleyBot 1.2 - Developed By Oha Der Erste",
+        text="WheatleyBot 1.3 - Developed By Oha Der Erste",
         icon_url="https://cdn.discordapp.com/avatars/714567851708645431/b609799d6fb8210f7e283adcb8b4c9d7.png",
     )
 
@@ -183,10 +190,11 @@ async def help(inter):
 
     embed.add_field(name="/wetter", value="Shows you the weather!", inline=False)
     embed.add_field(name="/insult", value="Spits out a random insult!", inline=False)
+    embed.add_field(name="/trash", value="Spits out random trash!", inline=False)
     embed.add_field(name="/sagmir {your yes-no-question}", value="Helps you make important decisions", inline=False)
-    embed.add_field(name="/table", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
-    embed.add_field(name="/herewegoagain", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
-    embed.add_field(name="/boom", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
+    embed.add_field(name="/soundboard table", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
+    embed.add_field(name="/soundboard herewegoagain", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
+    embed.add_field(name="/soundboard boom", value="Soundboard command. Try it while you are in a voice channel!", inline=False)
     embed.add_field(name="/kopf {mc-name}", value="Shows you the head of a Minecraft Player", inline=False)
     embed.add_field(name="/skin {mc-name", value="Shows you the skin of a Minecraft Player", inline=False)
     embed.add_field(name="/mock", value="MoCkS yOuR mEsSaGe", inline=False)
