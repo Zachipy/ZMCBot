@@ -1,4 +1,4 @@
-# WheatleyBot-Fork 1.3
+# ZMCBoz
 
 Update 1.3:
 - Added /gpt to talk with text-davinci-003 
