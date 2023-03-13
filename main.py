@@ -35,7 +35,7 @@ async def on_ready():
 
 #ChatGPT
 # Initialize the OpenAI API client
-openai.api_key = "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"
+openai.api_key = "api-key"
 
 # Create a Discord client object
 client =  disnake.Client()
