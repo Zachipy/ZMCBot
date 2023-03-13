@@ -1,5 +1,5 @@
-# ZMCBot
-🤖 A simple Discord Bot to manage your Server
+# 🤖 ZMCBot
+✨ A simple Discord Bot to manage your Server
 
 🔹 Easy to configurate
 🔹 Talk with ChatGPT
