@@ -27,8 +27,8 @@ tokenfile = open(".token")
 bottoken = tokenfile.read()
 tokenfile.close()
 
-openai_key = open(".openaitoken")
-bottoken = tokenfile.read()
+openaitokenfile = open(".openaitoken")
+openai_key = openaitokenfile.read()
 tokenfile.close()
 
 @bot.event
