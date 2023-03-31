@@ -1,0 +1,1 @@
+disnake, urllib, random, asyncio, openai
