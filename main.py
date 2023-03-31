@@ -287,7 +287,7 @@ async def help(inter):
         icon_url="https://cdn.discordapp.com/avatars/913840049223774288/4a346a9cf7d80fc81806fe08459f5083.webp?size=128",
     )
     embed.set_footer(
-        text="WheatleyBot 1.2 (Zachi Fork) - Original developed by Oha Der Erste",
+        text="ZMCBot 1.5 - Original developed by Oha Der Erste",
         icon_url="https://cdn.discordapp.com/avatars/913840049223774288/4a346a9cf7d80fc81806fe08459f5083.webp?size=128",
     )
     embed.add_field(name="/wheater", value="Shows you the weather!", inline=False)
